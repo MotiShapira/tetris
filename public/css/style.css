@@ -1,0 +1,170 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0a14;
+  --panel-bg:  #12121f;
+  --border:    #2a2a45;
+  --text:      #c8c8e8;
+  --label:     #6060a0;
+  --accent:    #7070ff;
+  --kbd-bg:    #1e1e32;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 16px;
+  min-height: 100vh;
+}
+
+/* ── Sidebars ── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.panel-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--label);
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.stat {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* ── Game board ── */
+#game-wrap {
+  position: relative;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(100, 100, 255, 0.08);
+}
+
+/* ── Overlay ── */
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 20, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+#overlay-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+#overlay-title {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-shadow: 0 0 30px var(--accent);
+}
+
+#overlay-msg {
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
+#restart-btn {
+  margin-top: 6px;
+  padding: 10px 28px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+#restart-btn:hover  { background: #8888ff; }
+#restart-btn:active { transform: scale(0.97); }
+
+/* ── Controls list ── */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.ctrl {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text);
+}
+
+.ctrl span {
+  color: var(--label);
+  font-size: 10px;
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--kbd-bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: inherit;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* ── Responsive scale-down ── */
+@media (max-height: 700px) {
+  #app { padding: 8px; gap: 10px; }
+}

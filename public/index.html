@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Left panel: hold + controls -->
+    <div class="sidebar" id="sidebar-left">
+      <div class="panel">
+        <div class="panel-label">HOLD</div>
+        <canvas id="hold" width="96" height="80"></canvas>
+      </div>
+      <div class="panel">
+        <div class="panel-label">CONTROLS</div>
+        <div class="controls">
+          <div class="ctrl"><kbd>←</kbd><kbd>→</kbd><span>Move</span></div>
+          <div class="ctrl"><kbd>↑</kbd><span>Rotate CW</span></div>
+          <div class="ctrl"><kbd>Z</kbd><span>Rotate CCW</span></div>
+          <div class="ctrl"><kbd>↓</kbd><span>Soft drop</span></div>
+          <div class="ctrl"><kbd>Space</kbd><span>Hard drop</span></div>
+          <div class="ctrl"><kbd>C</kbd><span>Hold</span></div>
+          <div class="ctrl"><kbd>P</kbd><span>Pause</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center: game board -->
+    <div id="game-wrap">
+      <canvas id="board"></canvas>
+      <div id="overlay">
+        <div id="overlay-box">
+          <h1 id="overlay-title">TETRIS</h1>
+          <p id="overlay-msg">Press Enter or Space to start</p>
+          <button id="restart-btn">Start</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel: score + next -->
+    <div class="sidebar" id="sidebar-right">
+      <div class="panel">
+        <div class="panel-label">SCORE</div>
+        <div class="stat" id="score">0</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">LEVEL</div>
+        <div class="stat" id="level">1</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">LINES</div>
+        <div class="stat" id="lines">0</div>
+      </div>
+      <div class="panel">
+        <div class="panel-label">NEXT</div>
+        <canvas id="next1" width="96" height="80"></canvas>
+        <canvas id="next2" width="96" height="80"></canvas>
+        <canvas id="next3" width="96" height="80"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
