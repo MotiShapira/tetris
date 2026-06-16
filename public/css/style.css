@@ -1,13 +1,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #0a0a14;
-  --panel-bg:  #12121f;
-  --border:    #2a2a45;
-  --text:      #c8c8e8;
-  --label:     #6060a0;
-  --accent:    #7070ff;
-  --kbd-bg:    #1e1e32;
+  --bg:        #f0f0f5;
+  --panel-bg:  #ffffff;
+  --border:    #c0c0d8;
+  --text:      #2a2a3a;
+  --label:     #7070a0;
+  --accent:    #4a4aff;
+  --kbd-bg:    #e4e4f0;
 }
 
 html, body {
@@ -58,7 +58,7 @@ html, body {
 .stat {
   font-size: 22px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   letter-spacing: 0.04em;
 }
 
@@ -74,14 +74,14 @@ canvas {
   border: 2px solid var(--border);
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 0 40px rgba(100, 100, 255, 0.08);
+  box-shadow: 0 0 40px rgba(100, 100, 255, 0.12);
 }
 
 /* ── Overlay ── */
 #overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 20, 0.88);
+  background: rgba(240, 240, 245, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@ canvas {
   font-size: 42px;
   font-weight: 900;
   letter-spacing: 0.18em;
-  color: #fff;
+  color: var(--text);
   text-shadow: 0 0 30px var(--accent);
 }
 

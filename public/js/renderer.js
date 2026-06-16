@@ -19,11 +19,11 @@ export class Renderer {
     const W = COLS * CELL;
     const H = ROWS * CELL;
 
-    ctx.fillStyle = '#0d0d1a';
+    ctx.fillStyle = '#e8e8f0';
     ctx.fillRect(0, 0, W, H);
 
     // Draw subtle grid lines
-    ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+    ctx.strokeStyle = 'rgba(0,0,0,0.06)';
     ctx.lineWidth = 0.5;
     for (let c = 1; c < COLS; c++) {
       ctx.beginPath(); ctx.moveTo(c * CELL, 0); ctx.lineTo(c * CELL, H); ctx.stroke();
@@ -77,7 +77,7 @@ export class Renderer {
   _drawMiniPiece(ctx, type, alpha = 1) {
     const size = ctx.canvas.width;
     ctx.clearRect(0, 0, size, size);
-    ctx.fillStyle = '#0d0d1a';
+    ctx.fillStyle = '#e8e8f0';
     ctx.fillRect(0, 0, size, size);
 
     if (!type) return;
